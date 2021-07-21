@@ -20,9 +20,14 @@ public class Team {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
-    private List<Member> users = new ArrayList<>();
+    private List<Member> members = new ArrayList<Member>();
 
     public Team(String name) {
         this.name = name;
+    }
+
+    public Team(String name, List<Member> members) {
+        this.name = name;
+        this.members = members;
     }
 }
